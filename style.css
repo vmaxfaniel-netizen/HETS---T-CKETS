@@ -27,17 +27,15 @@ body{
 
 #qrcode{
     position:absolute;
-    top:115px;
-    left:155px;
-    width:110px;
-    height:110px;
+    top:168px;
+    left:170px;
     z-index:100;
 }
 
 #qrcode img,
 #qrcode canvas{
-    width:110px !important;
-    height:110px !important;
+    width:50px !important;
+    height:50px !important;
 }
 
 /* NUMÉRO */
