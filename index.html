@@ -1,59 +1,63 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HETS Tickets</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<title>HETS Tickets</title>
 
-<div class="ticket">
-  <br><br>
+<link rel="stylesheet" href="style.css">
 
-<button onclick="precedent()">⬅️ Précédent</button>
-
-<button onclick="suivant()">➡️ Suivant</button>
-    
-<br><br>
-
-<button onclick="telechargerPNG()">
-📥 Télécharger ce ticket
-</button>
-    
-    <h1>CLAVENS STORE</h1>
-
-    <h2>🇭🇹 HAÏTIEN ESENYURT</h2>
-
-    <h3>MATCH DE FOOTBALL</h3>
-
-    <div class="qr">
-        <div id="qrcode"></div>
-    </div>
-
-    <h2 id="numero">ESY-001</h2>
-
-    <p>📅 Samedi 27</p>
-
-    <p>🕟 16h30</p>
-
-    <p>📍 Aktowers</p>
-
-    <small>
-        Valable pour une seule entrée
-    </small>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
-<script src="script.js"></script>
-    
+</head>
+
+<body>
+
+<div class="ticket">
+
+<div class="header">
+<h1>CLAVENS STORE</h1>
+<h2>🇭🇹 HAÏTIEN ESENYURT</h2>
+<h3>MATCH DE FOOTBALL</h3>
 </div>
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    
+
+<div class="qr">
+<div id="qrcode"></div>
+</div>
+
+<h2 id="numero"></h2>
+
+<div class="infos">
+
+<p id="date"></p>
+
+<p id="heure"></p>
+
+<p id="lieu"></p>
+
+</div>
+
+<div class="footer">
+
+Valable pour une seule entrée
+
+</div>
+
+</div>
+
+<div class="buttons">
+
+<button onclick="precedent()">⬅️</button>
+
+<button onclick="suivant()">➡️</button>
+
+<button onclick="telechargerPNG()">📥 Télécharger</button>
+
+</div>
+
 <script src="script.js"></script>
 
 </body>
