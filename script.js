@@ -1,16 +1,12 @@
 const tickets = [];
 
 for (let i = 1; i <= 200; i++) {
-
-    const numero = "ESY-" + String(i).padStart(3, "0");
-
     tickets.push({
-        numero: numero,
+        numero: "ESY-" + String(i).padStart(3, "0"),
         date: "Samedi 27",
         heure: "16h30",
         lieu: "Aktowers"
     });
-
 }
 
 let index = 0;
@@ -19,10 +15,11 @@ function afficherTicket() {
 
     const t = tickets[index];
 
-    // Met à jour le numéro
     document.getElementById("numero").textContent = t.numero;
+    document.getElementById("date").textContent = "📅 " + t.date;
+    document.getElementById("heure").textContent = "🕟 " + t.heure;
+    document.getElementById("lieu").textContent = "📍 " + t.lieu;
 
-    // Génère le QR
     const qr = document.getElementById("qrcode");
     qr.innerHTML = "";
 
@@ -31,48 +28,40 @@ function afficherTicket() {
         width: 180,
         height: 180
     });
+
 }
 
-afficherTicket();
 function suivant() {
-
     if (index < tickets.length - 1) {
         index++;
         afficherTicket();
     }
-
 }
 
 function precedent() {
-
     if (index > 0) {
         index--;
         afficherTicket();
     }
-
 }
 
 function telechargerPNG() {
 
-    // Laisse le temps au QR de se dessiner
-    setTimeout(() => {
+    html2canvas(document.querySelector(".ticket"), {
+        scale: 3,
+        useCORS: true
+    }).then(canvas => {
 
-        html2canvas(document.querySelector(".ticket"), {
-            scale: 3,
-            useCORS: true,
-            backgroundColor: null
-        }).then(canvas => {
+        const lien = document.createElement("a");
 
-            const image = canvas.toDataURL("image/png");
+        lien.download = tickets[index].numero + ".png";
 
-            // Fonctionne mieux sur iPhone
-            const nouvelleFenetre = window.open();
-            nouvelleFenetre.document.write(
-                '<img src="' + image + '" style="width:100%">'
-            );
+        lien.href = canvas.toDataURL("image/png");
 
-        });
+        lien.click();
 
-    }, 300);
+    });
 
 }
+
+window.onload = afficherTicket;
