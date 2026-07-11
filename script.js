@@ -22,20 +22,15 @@ function afficherTicket() {
     // Met à jour le numéro
     document.getElementById("numero").textContent = t.numero;
 
-    // Met à jour les informations
-    document.querySelectorAll("p")[0].textContent = "📅 " + t.date;
-    document.querySelectorAll("p")[1].textContent = "🕟 " + t.heure;
-    document.querySelectorAll("p")[2].textContent = "📍 " + t.lieu;
-
+    // Génère le QR
     const qr = document.getElementById("qrcode");
-qr.innerHTML = "";
+    qr.innerHTML = "";
 
-new QRCode(qr,{
-    text:t.numero,
-    width:180,
-    height:180
-});
-
+    new QRCode(qr, {
+        text: t.numero,
+        width: 180,
+        height: 180
+    });
 }
 
 afficherTicket();
