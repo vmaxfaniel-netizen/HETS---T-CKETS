@@ -27,15 +27,14 @@ function afficherTicket() {
     document.querySelectorAll("p")[1].textContent = "🕟 " + t.heure;
     document.querySelectorAll("p")[2].textContent = "📍 " + t.lieu;
 
-    // Génère le QR
     const qr = document.getElementById("qrcode");
-    qr.innerHTML = "";
+qr.innerHTML = "";
 
-    new QRCode(qr, {
-        text: t.numero,
-        width: 220,
-        height: 220
-    });
+new QRCode(qr,{
+    text:t.numero,
+    width:180,
+    height:180
+});
 
 }
 
