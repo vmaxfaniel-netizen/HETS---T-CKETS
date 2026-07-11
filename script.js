@@ -27,3 +27,20 @@ function afficherTicket() {
 }
 
 afficherTicket();
+function suivant() {
+
+    if (index < tickets.length - 1) {
+        index++;
+        afficherTicket();
+    }
+
+}
+
+function precedent() {
+
+    if (index > 0) {
+        index--;
+        afficherTicket();
+    }
+
+}
