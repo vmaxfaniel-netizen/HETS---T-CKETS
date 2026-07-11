@@ -1,1 +1,46 @@
-console.log("HETS Tickets fonctionne");
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HETS Tickets</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="ticket">
+  <br><br>
+
+<button onclick="precedent()">⬅️ Précédent</button>
+
+<button onclick="suivant()">➡️ Suivant</button>
+
+    <h1>CLAVENS STORE</h1>
+
+    <h2>🇭🇹 HAÏTIEN ESENYURT</h2>
+
+    <h3>MATCH DE FOOTBALL</h3>
+
+    <div class="qr">
+        <img src="qrcodes/ESY-001.png" id="qr">
+    </div>
+
+    <h2 id="numero">ESY-001</h2>
+
+    <p>📅 Samedi 27</p>
+
+    <p>🕟 16h30</p>
+
+    <p>📍 Aktowers</p>
+
+    <small>
+        Valable pour une seule entrée
+    </small>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
