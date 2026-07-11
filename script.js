@@ -19,10 +19,13 @@ function afficherTicket() {
 
     const t = tickets[index];
 
-    document.getElementById("numero").textContent = t.numero;
+    document.getElementById("qrcode").innerHTML = "";
 
-    document.getElementById("qr").src =
-        "qrcodes/" + t.numero + ".png";
+new QRCode(document.getElementById("qrcode"), {
+    text: t.numero,
+    width: 220,
+    height: 220
+});
 
 }
 
