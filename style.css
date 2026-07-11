@@ -1,7 +1,21 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#1b1b1b;
+    font-family:Arial, Helvetica, sans-serif;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:30px;
+}
+
 .ticket{
     position:relative;
     width:420px;
-    margin:auto;
 }
 
 .fond{
@@ -9,38 +23,15 @@
     display:block;
 }
 
-#qrcode{
-    position:absolute;
-    top:95px;
-    left:120px;
-    z-index:100;
-}
-
-#numero{
-    position:absolute;
-
-    top:650px;
-
-    width:100%;
-
-    text-align:center;
-
-    font-size:32px;
-
-    font-weight:bold;
-
-    color:#002B7F;
-
-    letter-spacing:3px;
-}
+/* QR CODE */
 
 #qrcode{
     position:absolute;
-    top:155px;
+    top:145px;
     left:120px;
     width:180px;
     height:180px;
-    z-index:20;
+    z-index:100;
 }
 
 #qrcode img,
@@ -49,11 +40,67 @@
     height:180px !important;
 }
 
+/* NUMÉRO */
+
 #numero{
     position:absolute;
-    top:580px;
-    left:0;
+    top:355px;
     width:100%;
     text-align:center;
-    z-index:10;
+    font-size:28px;
+    font-weight:bold;
+    color:white;
+    letter-spacing:2px;
+}
+
+/* DATE */
+
+#date{
+    position:absolute;
+    top:410px;
+    left:35px;
+    color:white;
+    font-size:14px;
+    font-weight:bold;
+}
+
+/* HEURE */
+
+#heure{
+    position:absolute;
+    top:410px;
+    left:160px;
+    color:white;
+    font-size:14px;
+    font-weight:bold;
+}
+
+/* LIEU */
+
+#lieu{
+    position:absolute;
+    top:410px;
+    right:25px;
+    color:white;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.buttons{
+    margin-top:20px;
+}
+
+button{
+    padding:12px 18px;
+    margin:5px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    background:#0057B8;
+    color:white;
+}
+
+button:hover{
+    background:#D21034;
 }
