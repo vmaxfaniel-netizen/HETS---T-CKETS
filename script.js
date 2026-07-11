@@ -44,3 +44,21 @@ function precedent() {
     }
 
 }
+
+function telechargerPNG() {
+
+    html2canvas(document.querySelector(".ticket"), {
+        scale: 3
+    }).then(canvas => {
+
+        const lien = document.createElement("a");
+
+        lien.download = document.getElementById("numero").textContent + ".png";
+
+        lien.href = canvas.toDataURL("image/png");
+
+        lien.click();
+
+    });
+
+}
