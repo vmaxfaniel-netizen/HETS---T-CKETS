@@ -25,8 +25,8 @@ function afficherTicket() {
 
     new QRCode(qr, {
         text: t.numero,
-        width: 180,
-        height: 180
+        width: 110,
+        height: 110
     });
 
 }
