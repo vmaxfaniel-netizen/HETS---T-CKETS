@@ -6,29 +6,20 @@ body{
 }
 
 .ticket{
-
     width:420px;
+    height:760px;
 
     margin:auto;
 
-    background:linear-gradient(
-        180deg,
-        #0057B8 0%,
-        #0057B8 50%,
-        #D21034 50%,
-        #D21034 100%
-    );
-
-    color:white;
+    background-image:url("images/fond-ticket.png");
+    background-size:cover;
+    background-position:center;
 
     border-radius:25px;
 
-    padding:30px;
+    position:relative;
 
-    text-align:center;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.3);
-
+    overflow:hidden;
 }
 
 .ticket h1{
