@@ -19,13 +19,23 @@ function afficherTicket() {
 
     const t = tickets[index];
 
-    document.getElementById("qrcode").innerHTML = "";
+    // Met à jour le numéro
+    document.getElementById("numero").textContent = t.numero;
 
-new QRCode(document.getElementById("qrcode"), {
-    text: t.numero,
-    width: 220,
-    height: 220
-});
+    // Met à jour les informations
+    document.querySelectorAll("p")[0].textContent = "📅 " + t.date;
+    document.querySelectorAll("p")[1].textContent = "🕟 " + t.heure;
+    document.querySelectorAll("p")[2].textContent = "📍 " + t.lieu;
+
+    // Génère le QR
+    const qr = document.getElementById("qrcode");
+    qr.innerHTML = "";
+
+    new QRCode(qr, {
+        text: t.numero,
+        width: 220,
+        height: 220
+    });
 
 }
 
@@ -50,18 +60,25 @@ function precedent() {
 
 function telechargerPNG() {
 
-    html2canvas(document.querySelector(".ticket"), {
-        scale: 3
-    }).then(canvas => {
+    // Laisse le temps au QR de se dessiner
+    setTimeout(() => {
 
-        const lien = document.createElement("a");
+        html2canvas(document.querySelector(".ticket"), {
+            scale: 3,
+            useCORS: true,
+            backgroundColor: null
+        }).then(canvas => {
 
-        lien.download = document.getElementById("numero").textContent + ".png";
+            const image = canvas.toDataURL("image/png");
 
-        lien.href = canvas.toDataURL("image/png");
+            // Fonctionne mieux sur iPhone
+            const nouvelleFenetre = window.open();
+            nouvelleFenetre.document.write(
+                '<img src="' + image + '" style="width:100%">'
+            );
 
-        lien.click();
+        });
 
-    });
+    }, 300);
 
 }
